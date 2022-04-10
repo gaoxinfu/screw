@@ -99,7 +99,7 @@
 
 ```xml
 <dependency>
-    <groupId>cn.smallbun.screw</groupId>
+    <groupId>cn.gaoxinfu.screw</groupId>
     <artifactId>screw-core</artifactId>
     <version>${lastVersion}</version>
  </dependency>
@@ -184,7 +184,7 @@ void documentGeneration() {
 <build>
     <plugins>
         <plugin>
-            <groupId>cn.smallbun.screw</groupId>
+            <groupId>cn.gaoxinfu.screw</groupId>
             <artifactId>screw-maven-plugin</artifactId>
             <version>${lastVersion}</version>
             <dependencies>
@@ -270,7 +270,7 @@ void documentGeneration() {
 
 ```xml
 <dependency>
-    <groupId>cn.smallbun.screw</groupId>
+    <groupId>cn.gaoxinfu.screw</groupId>
     <artifactId>screw-extension</artifactId>
     <version>${lastVersion}</version>
  </dependency>
