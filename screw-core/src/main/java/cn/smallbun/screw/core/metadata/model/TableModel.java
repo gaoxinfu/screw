@@ -49,4 +49,9 @@ public class TableModel implements Serializable {
      * 是否弃用
      */
     private Boolean           deprecated;
+
+    /**
+     * 功能模块
+     */
+    public  String            businessModel;
 }

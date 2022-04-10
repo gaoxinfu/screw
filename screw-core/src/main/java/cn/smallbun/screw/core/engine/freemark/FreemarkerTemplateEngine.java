@@ -50,9 +50,7 @@ public class FreemarkerTemplateEngine extends AbstractTemplateEngine {
     /**
      * freemarker 配置实例化
      */
-    private final Configuration configuration = new Configuration(
-        Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
-
+    private final Configuration configuration = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
     {
         try {
             String path = getEngineConfig().getCustomTemplate();

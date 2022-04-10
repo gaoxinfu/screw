@@ -18,6 +18,7 @@
 package cn.smallbun.screw.core.process;
 
 import cn.smallbun.screw.core.Configuration;
+import cn.smallbun.screw.core.engine.EngineTable;
 import cn.smallbun.screw.core.metadata.Column;
 import cn.smallbun.screw.core.metadata.Database;
 import cn.smallbun.screw.core.metadata.PrimaryKey;
@@ -27,6 +28,7 @@ import cn.smallbun.screw.core.metadata.model.DataModel;
 import cn.smallbun.screw.core.metadata.model.TableModel;
 import cn.smallbun.screw.core.query.DatabaseQuery;
 import cn.smallbun.screw.core.query.DatabaseQueryFactory;
+import cn.smallbun.screw.core.util.CollectionUtils;
 import cn.smallbun.screw.core.util.StringUtils;
 
 import java.util.ArrayList;
@@ -128,6 +130,7 @@ public class DataModelProcess extends AbstractProcess {
             }
             //放入列
             tableModel.setColumns(columnModels);
+            tableModel.setBusinessModel(this.getBusinessModel(table.getTableName(),config.getEngineConfig().getEngineTableList()));
         }
         //设置表
         model.setTables(filterTables(tableModels));
@@ -174,6 +177,18 @@ public class DataModelProcess extends AbstractProcess {
         columnModel.setRemarks(column.getRemarks());
         //放入集合
         columnModels.add(columnModel);
+    }
+
+    private String getBusinessModel(String tableName, List<EngineTable> engineTableList){
+        if (CollectionUtils.isEmpty(engineTableList)){
+            return null;
+        }
+        for (EngineTable engineTable:engineTableList) {
+            if (tableName.equals(engineTable.getTableName())){
+                return engineTable.getBusinessModel();
+            }
+        }
+        return null;
     }
 
 }

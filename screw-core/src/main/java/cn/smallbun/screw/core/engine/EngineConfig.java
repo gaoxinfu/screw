@@ -21,6 +21,8 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 文件生成配置
@@ -55,4 +57,6 @@ public class EngineConfig implements Serializable {
      * 文件名称
      */
     private String             fileName;
+
+    private List<EngineTable>  engineTableList;
 }
